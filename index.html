@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist — Coordinador de Infraestructura IT | Nelson Chacón</title>
+<meta name="description" content="Ruta de aprendizaje y checklist de cursos para Coordinador de Infraestructura IT">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.1.0/iconfont/tabler-icons.min.css">
+<style>
+:root{
+  --navy:#0F2044;
+  --blue:#1A3A6B;
+  --accent:#2563EB;
+  --accent-light:#EFF4FF;
+  --green:#16A34A;
+  --green-light:#F0FDF4;
+  --orange:#EA580C;
+  --orange-light:#FFF7ED;
+  --purple:#7C3AED;
+  --purple-light:#F3E8FF;
+  --teal:#0D9488;
+  --teal-light:#E6FFFA;
+  --red:#DC2626;
+  --red-light:#FEF2F2;
+  --indigo:#4338CA;
+  --indigo-light:#EEF2FF;
+  --cyan:#0891B2;
+  --cyan-light:#ECFEFF;
+  --violet:#7B2FBE;
+  --violet-light:#F5EBFF;
+  --amber:#B45309;
+  --amber-light:#FFFBEB;
+
+  --bg:#F8FAFC;
+  --surface:#FFFFFF;
+  --surface-2:#F1F5F9;
+  --border:#E2E8F0;
+  --border-strong:#CBD5E1;
+  --text-primary:#0F172A;
+  --text-secondary:#475569;
+  --text-muted:#94A3B8;
+  --radius:10px;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.04);
+  --shadow-md:0 4px 12px rgba(15,23,42,.06);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text-primary);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
+  color:#fff;
+  padding:3rem 1.5rem 2.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  top:-50%;right:-10%;
+  width:500px;height:500px;
+  background:radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+  border-radius:50%;
+}
+.hero-inner{max-width:980px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:#93C5FD;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;
+}
+.hero h1{font-size:clamp(24px,4vw,34px);font-weight:700;line-height:1.2;margin-bottom:.5rem}
+.hero p{font-size:15px;color:#CBD5E1;max-width:560px}
+.hero-meta{display:flex;gap:1.5rem;margin-top:1.75rem;flex-wrap:wrap}
+.hero-stat{display:flex;flex-direction:column;gap:2px}
+.hero-stat .n{font-size:22px;font-weight:700}
+.hero-stat .l{font-size:11.5px;color:#93A5C9}
+
+/* ===== STICKY PROGRESS ===== */
+.progress-bar-wrap{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+  padding:.85rem 1.5rem;
+}
+.progress-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:1rem}
+.progress-track{flex:1;height:8px;background:var(--surface-2);border-radius:5px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--green),#22C55E);border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.progress-pct{font-size:14px;font-weight:700;color:var(--text-primary);min-width:42px;text-align:right}
+.progress-label{font-size:12.5px;color:var(--text-secondary);white-space:nowrap}
+.reset-link{font-size:12px;color:var(--red);background:none;border:none;cursor:pointer;text-decoration:underline;white-space:nowrap;font-family:inherit}
+
+/* ===== MAIN ===== */
+.container{max-width:980px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+.stats-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:.75rem;margin-bottom:2rem;
+}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1rem 1.1rem;box-shadow:var(--shadow-sm);
+}
+.stat-card .num{font-size:24px;font-weight:700;color:var(--text-primary)}
+.stat-card .lab{font-size:12px;color:var(--text-muted);margin-top:2px}
+.stat-card.success .num{color:var(--green)}
+.stat-card.warn .num{color:var(--orange)}
+
+/* ===== FILTERS ===== */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.75rem}
+.filter-btn{
+  font-size:13px;font-weight:500;padding:7px 16px;
+  border:1px solid var(--border-strong);border-radius:99px;
+  background:var(--surface);color:var(--text-secondary);
+  cursor:pointer;transition:all .15s;font-family:inherit;
+}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* ===== BLOQUES ===== */
+.bloque{
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  margin-bottom:1rem;overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.bloque-hdr{
+  display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;
+  cursor:pointer;user-select:none;transition:background .15s;
+}
+.bloque-hdr:hover{background:var(--surface-2)}
+.bloque-icon-wrap{
+  width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:18px;
+}
+.bloque-title{font-size:15.5px;font-weight:600;color:var(--text-primary);flex:1}
+.bloque-sub{font-size:12px;color:var(--text-muted);margin-top:2px;font-weight:400}
+.bloque-badge{font-size:12px;font-weight:600;padding:4px 11px;border-radius:99px;white-space:nowrap}
+.bloque-toggle{font-size:18px;color:var(--text-muted);transition:transform .25s;flex-shrink:0}
+.bloque-toggle.open{transform:rotate(180deg)}
+.bloque-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.bloque-body.open{max-height:3000px}
+.bloque-body-inner{border-top:1px solid var(--border)}
+
+.course-row{
+  display:flex;align-items:flex-start;gap:12px;padding:1rem 1.25rem;
+  border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s;
+}
+.course-row:last-child{border-bottom:none}
+.course-row:hover{background:var(--surface-2)}
+.course-row.done{background:var(--green-light)}
+
+.check-box{
+  width:22px;height:22px;border-radius:6px;border:2px solid var(--border-strong);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
+  transition:all .15s;background:#fff;
+}
+.check-box.checked{background:var(--green);border-color:var(--green)}
+.check-box i{font-size:14px;color:#fff;opacity:0;transition:opacity .15s}
+.check-box.checked i{opacity:1}
+
+.course-info{flex:1;min-width:0}
+.course-name{font-size:14px;font-weight:500;color:var(--text-primary);line-height:1.45}
+.course-row.done .course-name{text-decoration:line-through;color:var(--text-muted)}
+.course-meta{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;align-items:center}
+.tag{font-size:10.5px;padding:3px 9px;border-radius:99px;font-weight:600;white-space:nowrap}
+.tag-month{background:var(--surface-2);color:var(--text-secondary)}
+.tag-free{background:var(--green-light);color:var(--green)}
+.tag-paid{background:var(--orange-light);color:var(--orange)}
+.tag-cert{background:var(--indigo-light);color:var(--indigo)}
+.course-url{
+  font-size:11.5px;color:var(--accent);text-decoration:none;margin-top:6px;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.course-url:hover{text-decoration:underline}
+
+/* ===== FOOTER ===== */
+.footer{
+  text-align:center;padding:2.5rem 1.5rem;color:var(--text-muted);font-size:12.5px;
+  border-top:1px solid var(--border);margin-top:2rem;
+}
+.footer .name{font-weight:600;color:var(--text-secondary)}
+
+.no-results{padding:3rem;text-align:center;color:var(--text-muted);font-size:14px}
+
+@media (max-width:600px){
+  .hero{padding:2.25rem 1.25rem 2rem}
+  .container{padding:1.5rem 1.25rem 3rem}
+  .progress-bar-wrap{padding:.7rem 1.25rem}
+  .progress-label{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><i class="ti ti-route" aria-hidden="true"></i> Ruta de aprendizaje · 4 meses</div>
+    <h1>Checklist — Coordinador de Infraestructura IT</h1>
+    <p>Nelson Chacón · RCJ Corporación — Fortinet, VMware, Active Directory, Microsoft 365, SQL Server, Huawei Cloud, ciberseguridad y cámaras de seguridad.</p>
+    <div class="hero-meta">
+      <div class="hero-stat"><span class="n">25</span><span class="l">Cursos totales</span></div>
+      <div class="hero-stat"><span class="n">17</span><span class="l">En Udemy (español)</span></div>
+      <div class="hero-stat"><span class="n">8</span><span class="l">Gratuitos</span></div>
+      <div class="hero-stat"><span class="n">8</span><span class="l">Certificaciones meta</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="progress-bar-wrap">
+  <div class="progress-inner">
+    <span class="progress-label" id="done-label">0 de 25 completados</span>
+    <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+    <span class="progress-pct" id="prog-pct">0%</span>
+    <button class="reset-link" onclick="resetAll()">Reiniciar</button>
+  </div>
+</div>
+
+<main class="container">
+
+  <div class="stats-grid">
+    <div class="stat-card success"><div class="num" id="s-done">0</div><div class="lab">Completados</div></div>
+    <div class="stat-card warn"><div class="num" id="s-pend">25</div><div class="lab">Pendientes</div></div>
+    <div class="stat-card"><div class="num" id="s-free">0</div><div class="lab">Gratis hechos</div></div>
+    <div class="stat-card"><div class="num" id="s-paid">0</div><div class="lab">Udemy hechos</div></div>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-f="all" onclick="setFilter('all',this)">Todos</button>
+    <button class="filter-btn" data-f="pending" onclick="setFilter('pending',this)">Pendientes</button>
+    <button class="filter-btn" data-f="done" onclick="setFilter('done',this)">Completados</button>
+    <button class="filter-btn" data-f="free" onclick="setFilter('free',this)">Gratuitos</button>
+    <button class="filter-btn" data-f="paid" onclick="setFilter('paid',this)">Udemy de pago</button>
+  </div>
+
+  <div id="list"></div>
+
+</main>
+
+<footer class="footer">
+  <p><span class="name">Nelson Chacón</span> · Ruta de Aprendizaje IT · Coordinador de Infraestructura</p>
+  <p style="margin-top:4px">RCJ Corporación · Fortinet · VMware · Active Directory · Microsoft 365 · SQL Server · Huawei Cloud</p>
+</footer>
+
+<script>
+const STORAGE_KEY = 'nelson_checklist_v1';
+
+const DATA = [
+  {bloque:'Servidores Windows', icon:'ti-server', color:'purple', courses:[
+    {id:'c01',mes:'Mes 2',name:'Windows Server 2022 — Práctico de principiante a experto',free:false,cert:'Prep. AZ-800',url:'udemy.com/course/curso-practico-de-windows-server-de-principiante-a-experto',price:'~$10-15'},
+    {id:'c02',mes:'Mes 2',name:'Administrador de Sistemas Junior — Windows Server + Linux',free:false,cert:'MCSA / Linux Admin',url:'udemy.com/course/administrador-de-sistemas-junior-en-windows-server-y-linux',price:'~$10-15'},
+    {id:'c03',mes:'Mes 2',name:'Administración de Servidores Linux — de 0 a Avanzado',free:false,cert:'Prep. RHCSA',url:'udemy.com/course/curso-completo-de-linux-desde-cero',price:'~$10-15'},
+  ]},
+  {bloque:'Active Directory', icon:'ti-sitemap', color:'indigo', courses:[
+    {id:'c04',mes:'Mes 2',name:'Active Directory — Directorio Activo: De Cero a Arquitecto',free:false,cert:'MS-102 / AZ-800',url:'udemy.com/course/active-directory-directorio-activo-de-cero-a-arquitecto',price:'~$10-15'},
+    {id:'c05',mes:'Mes 2',name:'AD DS, DNS y DHCP — Completo de cero a experto',free:false,cert:'Prep. MCSA',url:'udemy.com/course/ad-ds-dns-y-dhcp-completo-de-cero-a-experto',price:'~$10-15'},
+    {id:'c06',mes:'Mes 2',name:'Administración AD por GUI y PowerShell (MVP Microsoft)',free:false,cert:'Certificado MVP',url:'udemy.com/course/administracion-de-active-directory-por-gui-y-powershell',price:'~$10-15'},
+  ]},
+  {bloque:'Microsoft 365 / Office 365', icon:'ti-brand-office', color:'cyan', courses:[
+    {id:'c07',mes:'Mes 2',name:'MS-102 — Administrador de Microsoft 365 (Certificación Oficial)',free:false,cert:'MS-102 Exam',url:'udemy.com/course/ms-102-administrador-de-microsoft-365-en-espanol',price:'~$10-15'},
+    {id:'c08',mes:'Mes 2',name:'Administración Office 365 — Exchange, SharePoint, OneDrive',free:false,cert:'Prep. MS-900',url:'udemy.com/course/curso-administracion-de-office-365',price:'~$10-15'},
+    {id:'c09',mes:'Mes 2',name:'PowerShell para Administración de Servidores y Seguridad',free:false,cert:'Habilidad core',url:'udemy.com/course/powershell-para-administracion-de-servidores-y-seguridad',price:'~$10-15'},
+    {id:'c10',mes:'Mes 2',name:'Microsoft 365 Developer Program (laboratorio gratuito)',free:true,cert:'Lab M365 E5',url:'developer.microsoft.com/microsoft-365/dev-program',price:'GRATIS'},
+  ]},
+  {bloque:'Ciberseguridad Defensiva', icon:'ti-shield-lock', color:'red', courses:[
+    {id:'c11',mes:'Mes 3',name:'Hacking Ético y Ciberseguridad Completo (Santiago Hernández)',free:false,cert:'Prep. CEH / eJPT',url:'udemy.com/course/curso-completo-de-hacking-etico-y-ciberseguridad',price:'~$10-15'},
+    {id:'c12',mes:'Mes 3',name:'Hacking Ético Avanzado — Active Directory y Redes Complejas',free:false,cert:'Prep. OSCP',url:'udemy.com/course/curso-profesional-de-hacking-etico-y-ciberseguridad',price:'~$10-15'},
+    {id:'c13',mes:'Mes 3',name:'Cisco NetAcad — Ciberseguridad Esencial',free:true,cert:'Cisco Cyber Badge',url:'skillsforall.com',price:'GRATIS'},
+    {id:'c14',mes:'Mes 3',name:'Microsoft SC-900 — Fundamentos de Seguridad',free:true,cert:'SC-900 (prep.)',url:'learn.microsoft.com/es-es/certifications/security-compliance-identity-fundamentals',price:'GRATIS'},
+  ]},
+  {bloque:'Monitoreo + Automatización', icon:'ti-chart-dots-3', color:'green', courses:[
+    {id:'c15',mes:'Mes 3',name:'Zabbix — De Principiante a Experto',free:false,cert:'Zabbix Specialist',url:'udemy.com/course/zabbix-de-principiante-a-experto',price:'~$10-15'},
+    {id:'c16',mes:'Mes 3',name:'Zabbix 7.0 — Monitoreo Empresarial + Grafana + Telegram',free:false,cert:'Zabbix Admin',url:'udemy.com/course/curso-de-zabbix-completo-desde-0-a-experto',price:'~$10-15'},
+    {id:'c17',mes:'Mes 2',name:'PowerShell — Introducción a Administración Windows (MVP)',free:false,cert:'Habilidad core',url:'udemy.com/course/introduccion-a-la-administracion-con-windows-powershell',price:'~$10-15'},
+  ]},
+  {bloque:'Fortinet + Cámaras CCTV', icon:'ti-shield-check', color:'blue', courses:[
+    {id:'c18',mes:'Mes 1',name:'Fortinet 7.x — De principiante a experto 2026',free:false,cert:'NSE 4',url:'udemy.com/course/fortinet-7-de-principiante-a-experto',price:'~$10-15'},
+    {id:'c19',mes:'Mes 1',name:'FortiAnalyzer + FortiManager — De principiante a experto',free:false,cert:'NSE 5/6 (prep.)',url:'udemy.com/course/fortianalyzer-de-principiante-a-experto',price:'~$20-30'},
+    {id:'c20',mes:'Mes 1',name:'Sistemas Avanzados de CCTV IP',free:false,cert:'Admin CCTV IP',url:'udemy.com/course/sistemas-avanzados-de-cctv-ip',price:'~$10-15'},
+    {id:'c21g',mes:'Gratis',name:'Fortinet NSE 1, 2 y 3 (oficiales gratuitos)',free:true,cert:'NSE 1, 2, 3',url:'training.fortinet.com',price:'GRATIS'},
+  ]},
+  {bloque:'VMware vSphere', icon:'ti-topology-complex', color:'purple', courses:[
+    {id:'c21',mes:'Mes 2',name:'VMware vSphere 8 — ESXi y vCenter desde cero a avanzado',free:false,cert:'VCP-DCV (prep.)',url:'udemy.com/course/vmware-vsphere-8-esxi-y-vcenter-desde-cero-a-avanzado',price:'~$10-15'},
+  ]},
+  {bloque:'SQL Server + SAP B1 + ESET', icon:'ti-database', color:'teal', courses:[
+    {id:'c22',mes:'Mes 3',name:'Administración de Base de Datos con SQL Server',free:false,cert:'DP-300 (prep.)',url:'udemy.com/course/administracion-de-base-de-datos-con-sql-server',price:'~$10-15'},
+    {id:'c22b',mes:'Gratis',name:'SQL Server 2022 Developer Edition (lab gratuito)',free:true,cert:'Laboratorio SQL',url:'microsoft.com/sql-server/sql-server-downloads',price:'GRATIS'},
+    {id:'c22c',mes:'Gratis',name:'ESET PROTECT — Knowledge Base oficial',free:true,cert:'ESET Certified Tech',url:'help.eset.com/protect',price:'GRATIS'},
+  ]},
+  {bloque:'Huawei Cloud + Networking', icon:'ti-cloud', color:'violet', courses:[
+    {id:'c23',mes:'Mes 4',name:'HCIA Datacom Entry — Español (Huawei)',free:false,cert:'HCIA-Datacom',url:'udemy.com/course/huawei-hcia-datacom-entry-espanol',price:'~$10-15'},
+    {id:'c23b',mes:'Mes 4',name:'HCIA Datacom Intermediate — Español (Huawei)',free:false,cert:'HCIA-Datacom',url:'udemy.com/course/espanol-curso-huawei-hcia-routing-switching-intermediate',price:'~$10-15'},
+    {id:'c24',mes:'Mes 4',name:'Huawei Learning Academy — Cloud + Datacom (oficial gratuito)',free:true,cert:'HCIA-Cloud Computing',url:'learning.huawei.com',price:'GRATIS'},
+  ]},
+  {bloque:'ITIL 4 + Coordinación IT', icon:'ti-clipboard-check', color:'amber', courses:[
+    {id:'c25',mes:'Mes 4',name:'Fundamentos ITIL 4 (gratuito en Udemy)',free:true,cert:'Base ITIL 4 Foundation',url:'udemy.com/course/curso-fundamentos-itil-4',price:'GRATIS'},
+    {id:'c25b',mes:'Mes 4',name:'ITIL 4 Foundation — Exámenes de práctica 2025/2026',free:false,cert:'ITIL 4 Foundation',url:'udemy.com/course/itil-foundation-v4-2025-examenes-en-espanol',price:'~$10-15'},
+  ]},
+];
+
+const COLOR_MAP = {
+  purple:{bg:'var(--purple-light)',fg:'var(--purple)'},
+  indigo:{bg:'var(--indigo-light)',fg:'var(--indigo)'},
+  cyan:{bg:'var(--cyan-light)',fg:'var(--cyan)'},
+  red:{bg:'var(--red-light)',fg:'var(--red)'},
+  green:{bg:'var(--green-light)',fg:'var(--green)'},
+  blue:{bg:'var(--accent-light)',fg:'var(--accent)'},
+  teal:{bg:'var(--teal-light)',fg:'var(--teal)'},
+  violet:{bg:'var(--violet-light)',fg:'var(--violet)'},
+  amber:{bg:'var(--amber-light)',fg:'var(--amber)'},
+};
+
+let state = {};
+let filter = 'all';
+
+function load(){
+  try{ state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+  catch(e){ state = {}; }
+}
+function save(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
+}
+function resetAll(){
+  if(!confirm('¿Reiniciar todo el progreso del checklist?')) return;
+  state = {}; save(); render();
+}
+function toggle(id){
+  state[id] = !state[id];
+  save(); render();
+}
+function setFilter(f, btn){
+  filter = f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  render();
+}
+function allCourses(){ return DATA.flatMap(b=>b.courses); }
+
+function updateStats(){
+  const all = allCourses();
+  const total = all.length;
+  const done = all.filter(c=>state[c.id]).length;
+  const freeDone = all.filter(c=>c.free && state[c.id]).length;
+  const paidDone = all.filter(c=>!c.free && state[c.id]).length;
+  const pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('done-label').textContent = done + ' de ' + total + ' completados';
+  document.getElementById('s-done').textContent = done;
+  document.getElementById('s-pend').textContent = total - done;
+  document.getElementById('s-free').textContent = freeDone;
+  document.getElementById('s-paid').textContent = paidDone;
+}
+
+function matchFilter(c){
+  if(filter==='all') return true;
+  if(filter==='done') return !!state[c.id];
+  if(filter==='pending') return !state[c.id];
+  if(filter==='free') return c.free;
+  if(filter==='paid') return !c.free;
+  return true;
+}
+
+function render(){
+  updateStats();
+  const list = document.getElementById('list');
+  let html = '';
+  DATA.forEach((b, bi) => {
+    const visible = b.courses.filter(matchFilter);
+    if(!visible.length) return;
+    const total = b.courses.length;
+    const done = b.courses.filter(c=>state[c.id]).length;
+    const col = COLOR_MAP[b.color] || COLOR_MAP.blue;
+    html += `<div class="bloque" id="bloque-${bi}">
+      <div class="bloque-hdr" onclick="toggleBloque(${bi})">
+        <div class="bloque-icon-wrap" style="background:${col.bg};color:${col.fg}">
+          <i class="ti ${b.icon}" aria-hidden="true"></i>
+        </div>
+        <div style="flex:1">
+          <div class="bloque-title">${b.bloque}</div>
+        </div>
+        <span class="bloque-badge" style="background:${col.bg};color:${col.fg}">${done}/${total}</span>
+        <i class="ti ti-chevron-down bloque-toggle open" id="tog-${bi}" aria-hidden="true"></i>
+      </div>
+      <div class="bloque-body open" id="body-${bi}">
+        <div class="bloque-body-inner">`;
+    visible.forEach(c => {
+      const done = !!state[c.id];
+      html += `<div class="course-row${done?' done':''}" onclick="toggle('${c.id}')">
+        <div class="check-box${done?' checked':''}"><i class="ti ti-check"></i></div>
+        <div class="course-info">
+          <div class="course-name">${c.name}</div>
+          <div class="course-meta">
+            <span class="tag tag-month">${c.mes}</span>
+            <span class="tag ${c.free?'tag-free':'tag-paid'}">${c.free?'Gratis':'Udemy · '+c.price}</span>
+            <span class="tag tag-cert">${c.cert}</span>
+          </div>
+          <a class="course-url" href="https://${c.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+            <i class="ti ti-external-link" aria-hidden="true"></i>${c.url}
+          </a>
+        </div>
+      </div>`;
+    });
+    html += `</div></div></div>`;
+  });
+  if(!html) html = `<div class="no-results">No hay cursos en este filtro.</div>`;
+  list.innerHTML = html;
+}
+
+function toggleBloque(bi){
+  const body = document.getElementById('body-'+bi);
+  const tog = document.getElementById('tog-'+bi);
+  const open = body.classList.toggle('open');
+  tog.classList.toggle('open', open);
+}
+
+load();
+render();
+</script>
+
+</body>
+</html>
