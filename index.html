@@ -3,427 +3,589 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checklist — Coordinador de Infraestructura IT | Nelson Chacón</title>
-<meta name="description" content="Ruta de aprendizaje y checklist de cursos para Coordinador de Infraestructura IT">
+<title>Mi Ruta IT — Nelson Chacón</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.1.0/iconfont/tabler-icons.min.css">
 <style>
 :root{
-  --navy:#0F2044;
-  --blue:#1A3A6B;
-  --accent:#2563EB;
-  --accent-light:#EFF4FF;
-  --green:#16A34A;
-  --green-light:#F0FDF4;
-  --orange:#EA580C;
-  --orange-light:#FFF7ED;
-  --purple:#7C3AED;
-  --purple-light:#F3E8FF;
-  --teal:#0D9488;
-  --teal-light:#E6FFFA;
-  --red:#DC2626;
-  --red-light:#FEF2F2;
-  --indigo:#4338CA;
-  --indigo-light:#EEF2FF;
-  --cyan:#0891B2;
-  --cyan-light:#ECFEFF;
-  --violet:#7B2FBE;
-  --violet-light:#F5EBFF;
-  --amber:#B45309;
-  --amber-light:#FFFBEB;
-
-  --bg:#F8FAFC;
-  --surface:#FFFFFF;
-  --surface-2:#F1F5F9;
-  --border:#E2E8F0;
-  --border-strong:#CBD5E1;
-  --text-primary:#0F172A;
-  --text-secondary:#475569;
-  --text-muted:#94A3B8;
-  --radius:10px;
-  --shadow-sm:0 1px 2px rgba(15,23,42,.04);
-  --shadow-md:0 4px 12px rgba(15,23,42,.06);
+  --navy:#0A1628; --blue:#0F2D5E; --accent:#3B82F6; --accent-dim:#1D4ED8;
+  --green:#10B981; --green-d:#059669; --green-bg:#ECFDF5; --green-t:#D1FAE5;
+  --amber:#F59E0B; --amber-d:#D97706; --amber-bg:#FFFBEB; --amber-t:#FDE68A;
+  --red:#EF4444; --red-bg:#FEF2F2;
+  --purple:#8B5CF6; --purple-bg:#F5F3FF;
+  --indigo:#6366F1; --indigo-bg:#EEF2FF;
+  --cyan:#06B6D4; --cyan-bg:#ECFEFF;
+  --rose:#F43F5E; --rose-bg:#FFF1F2;
+  --teal:#14B8A6; --teal-bg:#F0FDFA;
+  --violet:#7C3AED; --violet-bg:#EDE9FE;
+  --orange:#F97316; --orange-bg:#FFF7ED;
+  --text:#0F172A; --text-2:#334155; --text-3:#64748B; --text-4:#94A3B8;
+  --bg:#F0F4F8; --surface:#FFFFFF; --surface-2:#F8FAFC; --surface-3:#F1F5F9;
+  --border:#E2E8F0; --border-2:#CBD5E1;
+  --radius:12px; --radius-lg:16px;
+  --shadow:0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.05);
+  --shadow-md:0 4px 16px rgba(0,0,0,.08);
+  --shadow-lg:0 10px 40px rgba(0,0,0,.12);
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:var(--bg);
-  color:var(--text-primary);
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);
-  color:#fff;
-  padding:3rem 1.5rem 2.5rem;
-  position:relative;
-  overflow:hidden;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  top:-50%;right:-10%;
-  width:500px;height:500px;
-  background:radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-  border-radius:50%;
-}
-.hero-inner{max-width:980px;margin:0 auto;position:relative;z-index:1}
-.eyebrow{
-  font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  color:#93C5FD;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;
-}
-.hero h1{font-size:clamp(24px,4vw,34px);font-weight:700;line-height:1.2;margin-bottom:.5rem}
-.hero p{font-size:15px;color:#CBD5E1;max-width:560px}
-.hero-meta{display:flex;gap:1.5rem;margin-top:1.75rem;flex-wrap:wrap}
-.hero-stat{display:flex;flex-direction:column;gap:2px}
-.hero-stat .n{font-size:22px;font-weight:700}
-.hero-stat .l{font-size:11.5px;color:#93A5C9}
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#0D2454 50%,#0F3460 100%);padding:3rem 1.5rem 0;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-120px;right:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(59,130,246,.18) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-60px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(16,185,129,.1) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1040px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#60A5FA;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);padding:5px 12px;border-radius:99px;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(26px,4.5vw,38px);font-weight:700;color:#fff;line-height:1.18;margin-bottom:.6rem}
+.hero h1 span{background:linear-gradient(90deg,#60A5FA,#34D399);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:15px;color:#93C5FD;max-width:540px;line-height:1.6;margin-bottom:2rem}
+.hero-stats{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.1);margin:0 -1.5rem;padding:0 1.5rem}
+.hero-stat{flex:1;padding:1.1rem 1rem;border-right:1px solid rgba(255,255,255,.08);min-width:0}
+.hero-stat:last-child{border-right:none}
+.hero-stat .n{font-size:22px;font-weight:700;color:#fff;line-height:1}
+.hero-stat .l{font-size:11px;color:#64A4C8;margin-top:4px}
 
-/* ===== STICKY PROGRESS ===== */
-.progress-bar-wrap{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--border);
-  padding:.85rem 1.5rem;
-}
-.progress-inner{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:1rem}
-.progress-track{flex:1;height:8px;background:var(--surface-2);border-radius:5px;overflow:hidden}
-.progress-fill{height:100%;background:linear-gradient(90deg,var(--green),#22C55E);border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1)}
-.progress-pct{font-size:14px;font-weight:700;color:var(--text-primary);min-width:42px;text-align:right}
-.progress-label{font-size:12.5px;color:var(--text-secondary);white-space:nowrap}
-.reset-link{font-size:12px;color:var(--red);background:none;border:none;cursor:pointer;text-decoration:underline;white-space:nowrap;font-family:inherit}
+/* ── STICKY BAR ── */
+.sticky{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
+.sticky-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.sticky-label{font-size:13px;font-weight:600;color:var(--text-2);white-space:nowrap}
+.prog-track{flex:1;height:9px;background:var(--surface-3);border-radius:5px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--green),#34D399);border-radius:5px;transition:width .5s cubic-bezier(.4,0,.2,1);min-width:0}
+.prog-pct{font-size:14px;font-weight:700;color:var(--text);min-width:38px;text-align:right}
+.reset-btn{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--text-3);background:none;border:1px solid var(--border);border-radius:6px;padding:4px 9px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .15s}
+.reset-btn:hover{color:var(--red);border-color:var(--red)}
 
-/* ===== MAIN ===== */
-.container{max-width:980px;margin:0 auto;padding:2rem 1.5rem 4rem}
+/* ── LAYOUT ── */
+.container{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 5rem}
 
-.stats-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
-  gap:.75rem;margin-bottom:2rem;
-}
-.stat-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:1rem 1.1rem;box-shadow:var(--shadow-sm);
-}
-.stat-card .num{font-size:24px;font-weight:700;color:var(--text-primary)}
-.stat-card .lab{font-size:12px;color:var(--text-muted);margin-top:2px}
-.stat-card.success .num{color:var(--green)}
-.stat-card.warn .num{color:var(--orange)}
+/* ── STATS STRIP ── */
+.stats-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem;margin-bottom:2rem}
+.stat-chip{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem 1rem;box-shadow:var(--shadow)}
+.stat-chip .n{font-size:24px;font-weight:700}
+.stat-chip .l{font-size:11.5px;color:var(--text-3);margin-top:2px}
+.stat-chip.c-green .n{color:var(--green-d)}
+.stat-chip.c-amber .n{color:var(--amber-d)}
+.stat-chip.c-blue .n{color:var(--accent-dim)}
+.stat-chip.c-purple .n{color:var(--purple)}
 
-/* ===== FILTERS ===== */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.75rem}
-.filter-btn{
-  font-size:13px;font-weight:500;padding:7px 16px;
-  border:1px solid var(--border-strong);border-radius:99px;
-  background:var(--surface);color:var(--text-secondary);
-  cursor:pointer;transition:all .15s;font-family:inherit;
-}
-.filter-btn:hover{border-color:var(--accent);color:var(--accent)}
-.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+/* ── FILTERS ── */
+.section-label{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--text-3);margin-bottom:.6rem}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:1.75rem}
+.fbtn{font-size:13px;font-weight:500;padding:7px 15px;border:1.5px solid var(--border-2);border-radius:99px;background:var(--surface);color:var(--text-3);cursor:pointer;transition:all .15s;font-family:inherit}
+.fbtn:hover{border-color:var(--accent);color:var(--accent)}
+.fbtn.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(59,130,246,.3)}
 
-/* ===== BLOQUES ===== */
-.bloque{
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;
-  margin-bottom:1rem;overflow:hidden;box-shadow:var(--shadow-sm);
-}
-.bloque-hdr{
-  display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;
-  cursor:pointer;user-select:none;transition:background .15s;
-}
+/* ── BLOQUE ── */
+.bloque{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.875rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s}
+.bloque:hover{box-shadow:var(--shadow-md)}
+.bloque-hdr{display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;cursor:pointer;user-select:none;transition:background .15s}
 .bloque-hdr:hover{background:var(--surface-2)}
-.bloque-icon-wrap{
-  width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:18px;
-}
-.bloque-title{font-size:15.5px;font-weight:600;color:var(--text-primary);flex:1}
-.bloque-sub{font-size:12px;color:var(--text-muted);margin-top:2px;font-weight:400}
-.bloque-badge{font-size:12px;font-weight:600;padding:4px 11px;border-radius:99px;white-space:nowrap}
-.bloque-toggle{font-size:18px;color:var(--text-muted);transition:transform .25s;flex-shrink:0}
-.bloque-toggle.open{transform:rotate(180deg)}
-.bloque-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.bloque-body.open{max-height:3000px}
+.icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.bloque-text{flex:1;min-width:0}
+.bloque-title{font-size:15px;font-weight:600;color:var(--text)}
+.bloque-meta{font-size:11.5px;color:var(--text-3);margin-top:2px}
+.bloque-prog{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.mini-track{width:60px;height:5px;background:var(--surface-3);border-radius:3px;overflow:hidden}
+.mini-fill{height:100%;background:var(--green);border-radius:3px;transition:width .4s}
+.bloque-count{font-size:12px;font-weight:600;color:var(--text-3);white-space:nowrap}
+.chevron{font-size:18px;color:var(--text-4);transition:transform .25s;flex-shrink:0}
+.chevron.open{transform:rotate(180deg)}
+.bloque-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.bloque-body.open{max-height:5000px}
 .bloque-body-inner{border-top:1px solid var(--border)}
 
-.course-row{
-  display:flex;align-items:flex-start;gap:12px;padding:1rem 1.25rem;
-  border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s;
-}
+/* ── COURSE ROW ── */
+.course-row{display:flex;align-items:flex-start;gap:12px;padding:.95rem 1.25rem;border-bottom:1px solid var(--border);transition:background .12s;cursor:default}
 .course-row:last-child{border-bottom:none}
-.course-row:hover{background:var(--surface-2)}
-.course-row.done{background:var(--green-light)}
-
-.check-box{
-  width:22px;height:22px;border-radius:6px;border:2px solid var(--border-strong);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
-  transition:all .15s;background:#fff;
-}
-.check-box.checked{background:var(--green);border-color:var(--green)}
-.check-box i{font-size:14px;color:#fff;opacity:0;transition:opacity .15s}
-.check-box.checked i{opacity:1}
-
+.course-row.status-progress{background:linear-gradient(90deg,var(--amber-bg),transparent)}
+.course-row.status-done{background:linear-gradient(90deg,var(--green-bg),transparent)}
 .course-info{flex:1;min-width:0}
-.course-name{font-size:14px;font-weight:500;color:var(--text-primary);line-height:1.45}
-.course-row.done .course-name{text-decoration:line-through;color:var(--text-muted)}
-.course-meta{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;align-items:center}
+.course-name{font-size:14px;font-weight:500;color:var(--text);line-height:1.45}
+.course-row.status-done .course-name{text-decoration:line-through;color:var(--text-3)}
+.course-meta-row{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;align-items:center}
 .tag{font-size:10.5px;padding:3px 9px;border-radius:99px;font-weight:600;white-space:nowrap}
-.tag-month{background:var(--surface-2);color:var(--text-secondary)}
-.tag-free{background:var(--green-light);color:var(--green)}
-.tag-paid{background:var(--orange-light);color:var(--orange)}
-.tag-cert{background:var(--indigo-light);color:var(--indigo)}
-.course-url{
-  font-size:11.5px;color:var(--accent);text-decoration:none;margin-top:6px;
-  display:inline-flex;align-items:center;gap:4px;
-}
-.course-url:hover{text-decoration:underline}
+.tag-month{background:var(--surface-3);color:var(--text-3)}
+.tag-free{background:var(--green-bg);color:var(--green-d)}
+.tag-paid{background:var(--orange-bg);color:var(--orange)}
+.tag-cert{background:var(--indigo-bg);color:var(--indigo)}
+.course-url{font-size:11.5px;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:3px;margin-top:5px;opacity:.8;transition:opacity .15s}
+.course-url:hover{opacity:1;text-decoration:underline}
 
-/* ===== FOOTER ===== */
-.footer{
-  text-align:center;padding:2.5rem 1.5rem;color:var(--text-muted);font-size:12.5px;
-  border-top:1px solid var(--border);margin-top:2rem;
-}
-.footer .name{font-weight:600;color:var(--text-secondary)}
+/* ── STATUS BUTTONS ── */
+.status-btns{display:flex;flex-direction:column;gap:5px;flex-shrink:0;min-width:100px}
+.sbtn{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:5px 10px;border-radius:7px;border:1.5px solid var(--border-2);background:var(--surface);color:var(--text-3);cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap;width:100%;justify-content:center}
+.sbtn:hover{transform:translateX(1px)}
+.sbtn.s-pending:hover,.sbtn.s-pending.active{background:var(--surface-3);border-color:var(--border-2);color:var(--text-2)}
+.sbtn.s-progress:hover,.sbtn.s-progress.active{background:var(--amber-bg);border-color:var(--amber);color:var(--amber-d)}
+.sbtn.s-done:hover,.sbtn.s-done.active{background:var(--green-bg);border-color:var(--green);color:var(--green-d)}
 
-.no-results{padding:3rem;text-align:center;color:var(--text-muted);font-size:14px}
+/* ── FILES SECTION ── */
+.files-section{margin-top:.6rem;padding:.75rem 1rem;background:var(--surface-2);border-radius:8px;border:1px dashed var(--border-2)}
+.files-label{font-size:11.5px;font-weight:600;color:var(--text-3);margin-bottom:.5rem;display:flex;align-items:center;gap:5px}
+.files-list{display:flex;flex-direction:column;gap:4px;margin-bottom:.5rem}
+.file-item{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--text-2);background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 8px}
+.file-item i{color:var(--accent);font-size:14px;flex-shrink:0}
+.file-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-del{background:none;border:none;color:var(--text-4);cursor:pointer;font-size:14px;padding:0 2px;line-height:1;flex-shrink:0;transition:color .15s}
+.file-del:hover{color:var(--red)}
+.upload-btn{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:500;padding:5px 11px;border-radius:7px;border:1.5px dashed var(--border-2);background:var(--surface);color:var(--text-3);cursor:pointer;font-family:inherit;transition:all .15s}
+.upload-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--surface-2)}
+.upload-input{display:none}
 
-@media (max-width:600px){
-  .hero{padding:2.25rem 1.25rem 2rem}
-  .container{padding:1.5rem 1.25rem 3rem}
-  .progress-bar-wrap{padding:.7rem 1.25rem}
-  .progress-label{display:none}
+/* ── TOOLS SECTION ── */
+.tools-section{margin-top:2.5rem}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.875rem;margin-top:1rem}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem;box-shadow:var(--shadow);transition:box-shadow .2s,transform .15s}
+.tool-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.tool-hdr{display:flex;align-items:center;gap:9px;margin-bottom:.5rem}
+.tool-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.tool-name{font-size:13.5px;font-weight:600;color:var(--text)}
+.tool-cat{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--text-4);margin-bottom:3px}
+.tool-desc{font-size:12.5px;color:var(--text-2);line-height:1.5}
+.tool-free{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;color:var(--green-d);background:var(--green-bg);padding:2px 8px;border-radius:99px;margin-top:.4rem}
+
+/* ── SECTION DIVIDER ── */
+.sect-div{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.25rem}
+.sect-div-line{flex:1;height:1px;background:var(--border)}
+.sect-div-label{font-size:13px;font-weight:700;color:var(--text-2);white-space:nowrap;display:flex;align-items:center;gap:6px}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);opacity:0;background:var(--text);color:#fff;font-size:13px;font-weight:500;padding:10px 20px;border-radius:99px;box-shadow:var(--shadow-lg);transition:all .3s cubic-bezier(.34,1.56,.64,1);z-index:999;pointer-events:none;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── NO RESULTS ── */
+.no-res{padding:3rem;text-align:center;color:var(--text-3);font-size:14px}
+.no-res i{font-size:32px;display:block;margin-bottom:.75rem;color:var(--text-4)}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:2.5rem 1.5rem;color:var(--text-4);font-size:12px;border-top:1px solid var(--border)}
+footer strong{color:var(--text-3)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:640px){
+  .hero-stats{overflow-x:auto;gap:0}
+  .hero-stat{min-width:80px;padding:.9rem .7rem}
+  .hero-stat .n{font-size:18px}
+  .status-btns{flex-direction:row;min-width:auto}
+  .sbtn span{display:none}
+  .container{padding:1.25rem 1rem 4rem}
+  .sticky{padding:.65rem 1rem}
 }
 </style>
 </head>
 <body>
 
 <header class="hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
   <div class="hero-inner">
-    <div class="eyebrow"><i class="ti ti-route" aria-hidden="true"></i> Ruta de aprendizaje · 4 meses</div>
-    <h1>Checklist — Coordinador de Infraestructura IT</h1>
-    <p>Nelson Chacón · RCJ Corporación — Fortinet, VMware, Active Directory, Microsoft 365, SQL Server, Huawei Cloud, ciberseguridad y cámaras de seguridad.</p>
-    <div class="hero-meta">
-      <div class="hero-stat"><span class="n">25</span><span class="l">Cursos totales</span></div>
-      <div class="hero-stat"><span class="n">17</span><span class="l">En Udemy (español)</span></div>
-      <div class="hero-stat"><span class="n">8</span><span class="l">Gratuitos</span></div>
-      <div class="hero-stat"><span class="n">8</span><span class="l">Certificaciones meta</span></div>
+    <div class="hero-badge"><i class="ti ti-route"></i> Ruta de Aprendizaje · 4 Meses</div>
+    <h1>Mi Camino a <span>Coordinador de Infraestructura</span></h1>
+    <p class="hero-sub">Fortinet · VMware · Active Directory · Microsoft 365 · SQL Server · Huawei Cloud · Ciberseguridad · CCTV · ESET · SAP B1</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">25</div><div class="l">Cursos totales</div></div>
+      <div class="hero-stat"><div class="n">17</div><div class="l">En Udemy ES</div></div>
+      <div class="hero-stat"><div class="n">8</div><div class="l">Gratuitos</div></div>
+      <div class="hero-stat"><div class="n">8</div><div class="l">Certificaciones</div></div>
+      <div class="hero-stat"><div class="n" id="h-done">0</div><div class="l">Completados</div></div>
     </div>
   </div>
 </header>
 
-<div class="progress-bar-wrap">
-  <div class="progress-inner">
-    <span class="progress-label" id="done-label">0 de 25 completados</span>
-    <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
-    <span class="progress-pct" id="prog-pct">0%</span>
-    <button class="reset-link" onclick="resetAll()">Reiniciar</button>
+<div class="sticky">
+  <div class="sticky-inner">
+    <span class="sticky-label" id="prog-label">0 de 25</span>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <span class="prog-pct" id="prog-pct">0%</span>
+    <button class="reset-btn" onclick="resetAll()"><i class="ti ti-refresh"></i> Reiniciar</button>
   </div>
 </div>
 
 <main class="container">
 
-  <div class="stats-grid">
-    <div class="stat-card success"><div class="num" id="s-done">0</div><div class="lab">Completados</div></div>
-    <div class="stat-card warn"><div class="num" id="s-pend">25</div><div class="lab">Pendientes</div></div>
-    <div class="stat-card"><div class="num" id="s-free">0</div><div class="lab">Gratis hechos</div></div>
-    <div class="stat-card"><div class="num" id="s-paid">0</div><div class="lab">Udemy hechos</div></div>
+  <div class="stats-strip">
+    <div class="stat-chip c-green"><div class="n" id="s-done">0</div><div class="l">✅ Completados</div></div>
+    <div class="stat-chip c-amber"><div class="n" id="s-prog">0</div><div class="l">🔄 En proceso</div></div>
+    <div class="stat-chip c-blue"><div class="n" id="s-pend">25</div><div class="l">⏳ Pendientes</div></div>
+    <div class="stat-chip c-purple"><div class="n" id="s-free">0</div><div class="l">🎁 Gratis hechos</div></div>
   </div>
 
+  <div class="section-label">Filtrar por estado</div>
   <div class="filters">
-    <button class="filter-btn active" data-f="all" onclick="setFilter('all',this)">Todos</button>
-    <button class="filter-btn" data-f="pending" onclick="setFilter('pending',this)">Pendientes</button>
-    <button class="filter-btn" data-f="done" onclick="setFilter('done',this)">Completados</button>
-    <button class="filter-btn" data-f="free" onclick="setFilter('free',this)">Gratuitos</button>
-    <button class="filter-btn" data-f="paid" onclick="setFilter('paid',this)">Udemy de pago</button>
+    <button class="fbtn active" data-f="all"      onclick="setFilter('all',this)">Todos</button>
+    <button class="fbtn"        data-f="pending"   onclick="setFilter('pending',this)">⏳ Pendientes</button>
+    <button class="fbtn"        data-f="progress"  onclick="setFilter('progress',this)">🔄 En proceso</button>
+    <button class="fbtn"        data-f="done"      onclick="setFilter('done',this)">✅ Completados</button>
+    <button class="fbtn"        data-f="free"      onclick="setFilter('free',this)">🎁 Gratuitos</button>
+    <button class="fbtn"        data-f="paid"      onclick="setFilter('paid',this)">💳 Udemy pago</button>
   </div>
 
   <div id="list"></div>
 
+  <!-- TOOLS -->
+  <div class="tools-section" id="tools-section">
+    <div class="sect-div">
+      <div class="sect-div-line"></div>
+      <div class="sect-div-label"><i class="ti ti-tool"></i> Herramientas Gratuitas por Área</div>
+      <div class="sect-div-line"></div>
+    </div>
+    <div class="section-label">Filtrar herramientas</div>
+    <div class="filters" id="tool-filters">
+      <button class="fbtn active" data-tf="all" onclick="setToolFilter('all',this)">Todas</button>
+      <button class="fbtn" data-tf="red" onclick="setToolFilter('red',this)">🔐 Redes</button>
+      <button class="fbtn" data-tf="srv" onclick="setToolFilter('srv',this)">🖥️ Servidores</button>
+      <button class="fbtn" data-tf="ad"  onclick="setToolFilter('ad',this)">📋 AD / M365</button>
+      <button class="fbtn" data-tf="sql" onclick="setToolFilter('sql',this)">🗄️ SQL / SAP</button>
+      <button class="fbtn" data-tf="sec" onclick="setToolFilter('sec',this)">🛡️ Seguridad</button>
+      <button class="fbtn" data-tf="mon" onclick="setToolFilter('mon',this)">📊 Monitoreo</button>
+      <button class="fbtn" data-tf="cctv" onclick="setToolFilter('cctv',this)">📷 CCTV</button>
+      <button class="fbtn" data-tf="cld" onclick="setToolFilter('cld',this)">☁️ Nube</button>
+      <button class="fbtn" data-tf="gen" onclick="setToolFilter('gen',this)">🔧 General</button>
+    </div>
+    <div class="tools-grid" id="tools-grid"></div>
+  </div>
+
 </main>
 
-<footer class="footer">
-  <p><span class="name">Nelson Chacón</span> · Ruta de Aprendizaje IT · Coordinador de Infraestructura</p>
-  <p style="margin-top:4px">RCJ Corporación · Fortinet · VMware · Active Directory · Microsoft 365 · SQL Server · Huawei Cloud</p>
+<footer>
+  <strong>Nelson Chacón</strong> · Coordinador de Infraestructura IT · RCJ Corporación<br>
+  <span style="margin-top:4px;display:block">Fortinet · VMware · Active Directory · Microsoft 365 · SQL Server · Huawei Cloud · ESET · SAP B1</span>
 </footer>
 
-<script>
-const STORAGE_KEY = 'nelson_checklist_v1';
+<div id="toast"></div>
 
+<script>
+const SK = 'nelson_it_v3';
+
+// ── COURSES DATA ────────────────────────────────────────────
 const DATA = [
-  {bloque:'Servidores Windows', icon:'ti-server', color:'purple', courses:[
-    {id:'c01',mes:'Mes 2',name:'Windows Server 2022 — Práctico de principiante a experto',free:false,cert:'Prep. AZ-800',url:'udemy.com/course/curso-practico-de-windows-server-de-principiante-a-experto',price:'~$10-15'},
-    {id:'c02',mes:'Mes 2',name:'Administrador de Sistemas Junior — Windows Server + Linux',free:false,cert:'MCSA / Linux Admin',url:'udemy.com/course/administrador-de-sistemas-junior-en-windows-server-y-linux',price:'~$10-15'},
-    {id:'c03',mes:'Mes 2',name:'Administración de Servidores Linux — de 0 a Avanzado',free:false,cert:'Prep. RHCSA',url:'udemy.com/course/curso-completo-de-linux-desde-cero',price:'~$10-15'},
+  {id:'b1', bloque:'🖥️ Servidores Windows + Linux', icon:'ti-server', color:'purple',
+   bg:'var(--purple-bg)', fg:'var(--purple)', sub:'Mes 2 · 3 cursos',
+   courses:[
+    {id:'c01',mes:'Mes 2',n:'Windows Server 2022 — Práctico de principiante a experto',free:false,cert:'Prep. AZ-800',url:'udemy.com/course/curso-practico-de-windows-server-de-principiante-a-experto',p:'~$10-15'},
+    {id:'c02',mes:'Mes 2',n:'Administrador de Sistemas Junior — Windows Server + Linux',free:false,cert:'MCSA / Linux',url:'udemy.com/course/administrador-de-sistemas-junior-en-windows-server-y-linux',p:'~$10-15'},
+    {id:'c03',mes:'Mes 2',n:'Administración de Servidores Linux — de 0 a Avanzado',free:false,cert:'Prep. RHCSA',url:'udemy.com/course/curso-completo-de-linux-desde-cero',p:'~$10-15'},
   ]},
-  {bloque:'Active Directory', icon:'ti-sitemap', color:'indigo', courses:[
-    {id:'c04',mes:'Mes 2',name:'Active Directory — Directorio Activo: De Cero a Arquitecto',free:false,cert:'MS-102 / AZ-800',url:'udemy.com/course/active-directory-directorio-activo-de-cero-a-arquitecto',price:'~$10-15'},
-    {id:'c05',mes:'Mes 2',name:'AD DS, DNS y DHCP — Completo de cero a experto',free:false,cert:'Prep. MCSA',url:'udemy.com/course/ad-ds-dns-y-dhcp-completo-de-cero-a-experto',price:'~$10-15'},
-    {id:'c06',mes:'Mes 2',name:'Administración AD por GUI y PowerShell (MVP Microsoft)',free:false,cert:'Certificado MVP',url:'udemy.com/course/administracion-de-active-directory-por-gui-y-powershell',price:'~$10-15'},
+  {id:'b2', bloque:'📋 Active Directory', icon:'ti-sitemap', color:'indigo',
+   bg:'var(--indigo-bg)', fg:'var(--indigo)', sub:'Mes 2 · 3 cursos',
+   courses:[
+    {id:'c04',mes:'Mes 2',n:'Active Directory — Directorio Activo: De Cero a Arquitecto',free:false,cert:'MS-102 / AZ-800',url:'udemy.com/course/active-directory-directorio-activo-de-cero-a-arquitecto',p:'~$10-15'},
+    {id:'c05',mes:'Mes 2',n:'AD DS, DNS y DHCP — Completo de cero a experto',free:false,cert:'Prep. MCSA',url:'udemy.com/course/ad-ds-dns-y-dhcp-completo-de-cero-a-experto',p:'~$10-15'},
+    {id:'c06',mes:'Mes 2',n:'Administración AD por GUI y PowerShell (MVP Microsoft)',free:false,cert:'MVP Cert',url:'udemy.com/course/administracion-de-active-directory-por-gui-y-powershell',p:'~$10-15'},
   ]},
-  {bloque:'Microsoft 365 / Office 365', icon:'ti-brand-office', color:'cyan', courses:[
-    {id:'c07',mes:'Mes 2',name:'MS-102 — Administrador de Microsoft 365 (Certificación Oficial)',free:false,cert:'MS-102 Exam',url:'udemy.com/course/ms-102-administrador-de-microsoft-365-en-espanol',price:'~$10-15'},
-    {id:'c08',mes:'Mes 2',name:'Administración Office 365 — Exchange, SharePoint, OneDrive',free:false,cert:'Prep. MS-900',url:'udemy.com/course/curso-administracion-de-office-365',price:'~$10-15'},
-    {id:'c09',mes:'Mes 2',name:'PowerShell para Administración de Servidores y Seguridad',free:false,cert:'Habilidad core',url:'udemy.com/course/powershell-para-administracion-de-servidores-y-seguridad',price:'~$10-15'},
-    {id:'c10',mes:'Mes 2',name:'Microsoft 365 Developer Program (laboratorio gratuito)',free:true,cert:'Lab M365 E5',url:'developer.microsoft.com/microsoft-365/dev-program',price:'GRATIS'},
+  {id:'b3', bloque:'☁️ Microsoft 365 / Office 365', icon:'ti-brand-office', color:'cyan',
+   bg:'var(--cyan-bg)', fg:'var(--cyan)', sub:'Mes 2 · 4 cursos',
+   courses:[
+    {id:'c07',mes:'Mes 2',n:'MS-102 — Administrador de Microsoft 365 (Oficial)',free:false,cert:'MS-102 Exam',url:'udemy.com/course/ms-102-administrador-de-microsoft-365-en-espanol',p:'~$10-15'},
+    {id:'c08',mes:'Mes 2',n:'Administración Office 365 — Exchange, SharePoint, OneDrive',free:false,cert:'Prep. MS-900',url:'udemy.com/course/curso-administracion-de-office-365',p:'~$10-15'},
+    {id:'c09',mes:'Mes 2',n:'PowerShell para Administración de Servidores y Seguridad',free:false,cert:'Skill core',url:'udemy.com/course/powershell-para-administracion-de-servidores-y-seguridad',p:'~$10-15'},
+    {id:'c10',mes:'Mes 2',n:'Microsoft 365 Developer Program (laboratorio gratuito)',free:true,cert:'Lab M365 E5',url:'developer.microsoft.com/microsoft-365/dev-program',p:'GRATIS'},
   ]},
-  {bloque:'Ciberseguridad Defensiva', icon:'ti-shield-lock', color:'red', courses:[
-    {id:'c11',mes:'Mes 3',name:'Hacking Ético y Ciberseguridad Completo (Santiago Hernández)',free:false,cert:'Prep. CEH / eJPT',url:'udemy.com/course/curso-completo-de-hacking-etico-y-ciberseguridad',price:'~$10-15'},
-    {id:'c12',mes:'Mes 3',name:'Hacking Ético Avanzado — Active Directory y Redes Complejas',free:false,cert:'Prep. OSCP',url:'udemy.com/course/curso-profesional-de-hacking-etico-y-ciberseguridad',price:'~$10-15'},
-    {id:'c13',mes:'Mes 3',name:'Cisco NetAcad — Ciberseguridad Esencial',free:true,cert:'Cisco Cyber Badge',url:'skillsforall.com',price:'GRATIS'},
-    {id:'c14',mes:'Mes 3',name:'Microsoft SC-900 — Fundamentos de Seguridad',free:true,cert:'SC-900 (prep.)',url:'learn.microsoft.com/es-es/certifications/security-compliance-identity-fundamentals',price:'GRATIS'},
+  {id:'b4', bloque:'🛡️ Ciberseguridad Defensiva', icon:'ti-shield-lock', color:'rose',
+   bg:'var(--rose-bg)', fg:'var(--rose)', sub:'Mes 3 · 4 cursos',
+   courses:[
+    {id:'c11',mes:'Mes 3',n:'Hacking Ético y Ciberseguridad Completo (Santiago Hernández)',free:false,cert:'CEH / eJPT',url:'udemy.com/course/curso-completo-de-hacking-etico-y-ciberseguridad',p:'~$10-15'},
+    {id:'c12',mes:'Mes 3',n:'Hacking Ético Avanzado — Active Directory y Redes Complejas',free:false,cert:'Prep. OSCP',url:'udemy.com/course/curso-profesional-de-hacking-etico-y-ciberseguridad',p:'~$10-15'},
+    {id:'c13',mes:'Mes 3',n:'Cisco NetAcad — Ciberseguridad Esencial',free:true,cert:'Cisco Badge',url:'skillsforall.com',p:'GRATIS'},
+    {id:'c14',mes:'Mes 3',n:'Microsoft SC-900 — Fundamentos de Seguridad',free:true,cert:'SC-900 prep.',url:'learn.microsoft.com/es-es/certifications/security-compliance-identity-fundamentals',p:'GRATIS'},
   ]},
-  {bloque:'Monitoreo + Automatización', icon:'ti-chart-dots-3', color:'green', courses:[
-    {id:'c15',mes:'Mes 3',name:'Zabbix — De Principiante a Experto',free:false,cert:'Zabbix Specialist',url:'udemy.com/course/zabbix-de-principiante-a-experto',price:'~$10-15'},
-    {id:'c16',mes:'Mes 3',name:'Zabbix 7.0 — Monitoreo Empresarial + Grafana + Telegram',free:false,cert:'Zabbix Admin',url:'udemy.com/course/curso-de-zabbix-completo-desde-0-a-experto',price:'~$10-15'},
-    {id:'c17',mes:'Mes 2',name:'PowerShell — Introducción a Administración Windows (MVP)',free:false,cert:'Habilidad core',url:'udemy.com/course/introduccion-a-la-administracion-con-windows-powershell',price:'~$10-15'},
+  {id:'b5', bloque:'📊 Monitoreo + PowerShell', icon:'ti-chart-dots-3', color:'green',
+   bg:'var(--green-bg)', fg:'var(--green-d)', sub:'Mes 3 · 3 cursos',
+   courses:[
+    {id:'c15',mes:'Mes 3',n:'Zabbix — De Principiante a Experto',free:false,cert:'Zabbix Specialist',url:'udemy.com/course/zabbix-de-principiante-a-experto',p:'~$10-15'},
+    {id:'c16',mes:'Mes 3',n:'Zabbix 7.0 — Monitoreo Empresarial + Grafana + Telegram',free:false,cert:'Zabbix Admin',url:'udemy.com/course/curso-de-zabbix-completo-desde-0-a-experto',p:'~$10-15'},
+    {id:'c17',mes:'Mes 2',n:'PowerShell — Introducción a Administración Windows (MVP)',free:false,cert:'Skill core',url:'udemy.com/course/introduccion-a-la-administracion-con-windows-powershell',p:'~$10-15'},
   ]},
-  {bloque:'Fortinet + Cámaras CCTV', icon:'ti-shield-check', color:'blue', courses:[
-    {id:'c18',mes:'Mes 1',name:'Fortinet 7.x — De principiante a experto 2026',free:false,cert:'NSE 4',url:'udemy.com/course/fortinet-7-de-principiante-a-experto',price:'~$10-15'},
-    {id:'c19',mes:'Mes 1',name:'FortiAnalyzer + FortiManager — De principiante a experto',free:false,cert:'NSE 5/6 (prep.)',url:'udemy.com/course/fortianalyzer-de-principiante-a-experto',price:'~$20-30'},
-    {id:'c20',mes:'Mes 1',name:'Sistemas Avanzados de CCTV IP',free:false,cert:'Admin CCTV IP',url:'udemy.com/course/sistemas-avanzados-de-cctv-ip',price:'~$10-15'},
-    {id:'c21g',mes:'Gratis',name:'Fortinet NSE 1, 2 y 3 (oficiales gratuitos)',free:true,cert:'NSE 1, 2, 3',url:'training.fortinet.com',price:'GRATIS'},
+  {id:'b6', bloque:'🔐 Fortinet + Cámaras CCTV', icon:'ti-shield-check', color:'blue',
+   bg:'rgba(59,130,246,.08)', fg:'var(--accent-dim)', sub:'Mes 1 · 4 cursos',
+   courses:[
+    {id:'c18',mes:'Mes 1',n:'Fortinet 7.x — De principiante a experto 2026',free:false,cert:'NSE 4',url:'udemy.com/course/fortinet-7-de-principiante-a-experto',p:'~$10-15'},
+    {id:'c19',mes:'Mes 1',n:'FortiAnalyzer + FortiManager — De principiante a experto',free:false,cert:'NSE 5/6 prep.',url:'udemy.com/course/fortianalyzer-de-principiante-a-experto',p:'~$20-30'},
+    {id:'c20',mes:'Mes 1',n:'Sistemas Avanzados de CCTV IP',free:false,cert:'CCTV Admin',url:'udemy.com/course/sistemas-avanzados-de-cctv-ip',p:'~$10-15'},
+    {id:'c21g',mes:'Gratis',n:'Fortinet NSE 1, 2 y 3 (oficiales gratuitos)',free:true,cert:'NSE 1, 2, 3',url:'training.fortinet.com',p:'GRATIS'},
   ]},
-  {bloque:'VMware vSphere', icon:'ti-topology-complex', color:'purple', courses:[
-    {id:'c21',mes:'Mes 2',name:'VMware vSphere 8 — ESXi y vCenter desde cero a avanzado',free:false,cert:'VCP-DCV (prep.)',url:'udemy.com/course/vmware-vsphere-8-esxi-y-vcenter-desde-cero-a-avanzado',price:'~$10-15'},
+  {id:'b7', bloque:'⚙️ VMware vSphere 8', icon:'ti-topology-complex', color:'violet',
+   bg:'var(--violet-bg)', fg:'var(--violet)', sub:'Mes 2 · 1 curso',
+   courses:[
+    {id:'c21',mes:'Mes 2',n:'VMware vSphere 8 — ESXi y vCenter desde cero a avanzado',free:false,cert:'VCP-DCV prep.',url:'udemy.com/course/vmware-vsphere-8-esxi-y-vcenter-desde-cero-a-avanzado',p:'~$10-15'},
   ]},
-  {bloque:'SQL Server + SAP B1 + ESET', icon:'ti-database', color:'teal', courses:[
-    {id:'c22',mes:'Mes 3',name:'Administración de Base de Datos con SQL Server',free:false,cert:'DP-300 (prep.)',url:'udemy.com/course/administracion-de-base-de-datos-con-sql-server',price:'~$10-15'},
-    {id:'c22b',mes:'Gratis',name:'SQL Server 2022 Developer Edition (lab gratuito)',free:true,cert:'Laboratorio SQL',url:'microsoft.com/sql-server/sql-server-downloads',price:'GRATIS'},
-    {id:'c22c',mes:'Gratis',name:'ESET PROTECT — Knowledge Base oficial',free:true,cert:'ESET Certified Tech',url:'help.eset.com/protect',price:'GRATIS'},
+  {id:'b8', bloque:'🗄️ SQL Server + SAP B1 + ESET', icon:'ti-database', color:'teal',
+   bg:'var(--teal-bg)', fg:'var(--teal)', sub:'Mes 3 · 3 cursos',
+   courses:[
+    {id:'c22',mes:'Mes 3',n:'Administración de Base de Datos con SQL Server',free:false,cert:'DP-300 prep.',url:'udemy.com/course/administracion-de-base-de-datos-con-sql-server',p:'~$10-15'},
+    {id:'c22b',mes:'Gratis',n:'SQL Server 2022 Developer Edition (lab gratuito)',free:true,cert:'Lab SQL',url:'microsoft.com/sql-server/sql-server-downloads',p:'GRATIS'},
+    {id:'c22c',mes:'Gratis',n:'ESET PROTECT — Knowledge Base oficial',free:true,cert:'ESET Tech',url:'help.eset.com/protect',p:'GRATIS'},
   ]},
-  {bloque:'Huawei Cloud + Networking', icon:'ti-cloud', color:'violet', courses:[
-    {id:'c23',mes:'Mes 4',name:'HCIA Datacom Entry — Español (Huawei)',free:false,cert:'HCIA-Datacom',url:'udemy.com/course/huawei-hcia-datacom-entry-espanol',price:'~$10-15'},
-    {id:'c23b',mes:'Mes 4',name:'HCIA Datacom Intermediate — Español (Huawei)',free:false,cert:'HCIA-Datacom',url:'udemy.com/course/espanol-curso-huawei-hcia-routing-switching-intermediate',price:'~$10-15'},
-    {id:'c24',mes:'Mes 4',name:'Huawei Learning Academy — Cloud + Datacom (oficial gratuito)',free:true,cert:'HCIA-Cloud Computing',url:'learning.huawei.com',price:'GRATIS'},
+  {id:'b9', bloque:'☁️ Huawei Cloud + Networking', icon:'ti-cloud', color:'violet',
+   bg:'var(--violet-bg)', fg:'var(--violet)', sub:'Mes 4 · 3 cursos',
+   courses:[
+    {id:'c23',mes:'Mes 4',n:'HCIA Datacom Entry — Español (Huawei)',free:false,cert:'HCIA-Datacom',url:'udemy.com/course/huawei-hcia-datacom-entry-espanol',p:'~$10-15'},
+    {id:'c23b',mes:'Mes 4',n:'HCIA Datacom Intermediate — Español (Huawei)',free:false,cert:'HCIA-Datacom',url:'udemy.com/course/espanol-curso-huawei-hcia-routing-switching-intermediate',p:'~$10-15'},
+    {id:'c24',mes:'Mes 4',n:'Huawei Learning Academy — Cloud + Datacom (gratuito oficial)',free:true,cert:'HCIA-Cloud',url:'learning.huawei.com',p:'GRATIS'},
   ]},
-  {bloque:'ITIL 4 + Coordinación IT', icon:'ti-clipboard-check', color:'amber', courses:[
-    {id:'c25',mes:'Mes 4',name:'Fundamentos ITIL 4 (gratuito en Udemy)',free:true,cert:'Base ITIL 4 Foundation',url:'udemy.com/course/curso-fundamentos-itil-4',price:'GRATIS'},
-    {id:'c25b',mes:'Mes 4',name:'ITIL 4 Foundation — Exámenes de práctica 2025/2026',free:false,cert:'ITIL 4 Foundation',url:'udemy.com/course/itil-foundation-v4-2025-examenes-en-espanol',price:'~$10-15'},
+  {id:'b10', bloque:'📋 ITIL 4 + Coordinación IT', icon:'ti-clipboard-check', color:'amber',
+   bg:'var(--amber-bg)', fg:'var(--amber-d)', sub:'Mes 4 · 2 cursos',
+   courses:[
+    {id:'c25',mes:'Mes 4',n:'Fundamentos ITIL 4 (gratuito en Udemy)',free:true,cert:'ITIL 4 Foundation',url:'udemy.com/course/curso-fundamentos-itil-4',p:'GRATIS'},
+    {id:'c25b',mes:'Mes 4',n:'ITIL 4 Foundation — Exámenes de práctica 2025/2026',free:false,cert:'ITIL 4 Exam',url:'udemy.com/course/itil-foundation-v4-2025-examenes-en-espanol',p:'~$10-15'},
   ]},
 ];
 
-const COLOR_MAP = {
-  purple:{bg:'var(--purple-light)',fg:'var(--purple)'},
-  indigo:{bg:'var(--indigo-light)',fg:'var(--indigo)'},
-  cyan:{bg:'var(--cyan-light)',fg:'var(--cyan)'},
-  red:{bg:'var(--red-light)',fg:'var(--red)'},
-  green:{bg:'var(--green-light)',fg:'var(--green)'},
-  blue:{bg:'var(--accent-light)',fg:'var(--accent)'},
-  teal:{bg:'var(--teal-light)',fg:'var(--teal)'},
-  violet:{bg:'var(--violet-light)',fg:'var(--violet)'},
-  amber:{bg:'var(--amber-light)',fg:'var(--amber)'},
-};
+// ── TOOLS DATA ──────────────────────────────────────────────
+const TOOLS = [
+  {cat:'red',catL:'🔐 Redes y Seguridad',name:'GNS3',icon:'ti-network',bg:'rgba(59,130,246,.1)',fg:'var(--accent-dim)',desc:'Simulador de redes profesional. Emula FortiGate, routers y switches reales antes de tocar producción.'},
+  {cat:'red',catL:'🔐 Redes y Seguridad',name:'Wireshark',icon:'ti-wave-square',bg:'rgba(59,130,246,.1)',fg:'var(--accent-dim)',desc:'Analizador de tráfico de red en tiempo real. Indispensable para troubleshooting y seguridad.'},
+  {cat:'red',catL:'🔐 Redes y Seguridad',name:'Nmap',icon:'ti-radar',bg:'rgba(59,130,246,.1)',fg:'var(--accent-dim)',desc:'Scanner de puertos y auditoría de red. Descubre hosts activos, puertos abiertos y versiones.'},
+  {cat:'red',catL:'🔐 Redes y Seguridad',name:'Angry IP Scanner',icon:'ti-scan',bg:'rgba(59,130,246,.1)',fg:'var(--accent-dim)',desc:'Scanner ligero de red. Muestra hostname, MAC y puertos. Ideal para inventario rápido.'},
+  {cat:'red',catL:'🔐 Redes y Seguridad',name:'MobaXterm',icon:'ti-terminal-2',bg:'rgba(59,130,246,.1)',fg:'var(--accent-dim)',desc:'Terminal SSH avanzada con X11, SFTP, tunneling y múltiples sesiones. Reemplaza a PuTTY.'},
+  {cat:'red',catL:'🔐 Redes y Seguridad',name:'FortiGate VM (trial)',icon:'ti-shield',bg:'rgba(59,130,246,.1)',fg:'var(--accent-dim)',desc:'Imagen virtual de FortiGate para VMware. 15 días completos. Lab local de firewall.'},
+  {cat:'srv',catL:'🖥️ Servidores',name:'VMware ESXi 8 Free',icon:'ti-server-2',bg:'var(--purple-bg)',fg:'var(--purple)',desc:'Hipervisor tipo 1 gratuito. Sin límite de tiempo. Ideal para virtualizar servidores en producción pequeña.'},
+  {cat:'srv',catL:'🖥️ Servidores',name:'Proxmox VE',icon:'ti-server-bolt',bg:'var(--purple-bg)',fg:'var(--purple)',desc:'Hipervisor open source completo. Clustering, HA y backups sin costo. Alternativa a VMware.'},
+  {cat:'srv',catL:'🖥️ Servidores',name:'Windows Server 2022 Eval',icon:'ti-brand-windows',bg:'var(--purple-bg)',fg:'var(--purple)',desc:'Licencia de evaluación gratuita 180 días. Versión Enterprise completa para laboratorios.'},
+  {cat:'srv',catL:'🖥️ Servidores',name:'Veeam Agent Free',icon:'ti-archive',bg:'var(--purple-bg)',fg:'var(--purple)',desc:'Backup gratuito para Windows y Linux. Protege hasta 3 máquinas. Usado en miles de PYMEs.'},
+  {cat:'srv',catL:'🖥️ Servidores',name:'RSAT',icon:'ti-tool',bg:'var(--purple-bg)',fg:'var(--purple)',desc:'Administra AD, DNS, DHCP desde tu PC Win 10/11 sin entrar al servidor. Incluido en Windows.'},
+  {cat:'ad',catL:'📋 AD / M365',name:'AD Explorer',icon:'ti-binary-tree',bg:'var(--indigo-bg)',fg:'var(--indigo)',desc:'Sysinternals. Navega el árbol AD, busca objetos y compara snapshots para detectar cambios.'},
+  {cat:'ad',catL:'📋 AD / M365',name:'GPMC (RSAT)',icon:'ti-clipboard-list',bg:'var(--indigo-bg)',fg:'var(--indigo)',desc:'Consola de gestión de GPOs. Administra todas las directivas de grupo desde un solo panel.'},
+  {cat:'ad',catL:'📋 AD / M365',name:'Azure AD Connect',icon:'ti-arrows-exchange',bg:'var(--indigo-bg)',fg:'var(--indigo)',desc:'Sincroniza AD on-premise con Microsoft Entra ID / Microsoft 365. Gratuito de Microsoft.'},
+  {cat:'ad',catL:'📋 AD / M365',name:'M365 Developer Program',icon:'ti-brand-office',bg:'var(--cyan-bg)',fg:'var(--cyan)',desc:'Tenant M365 E5 gratuito con 25 licencias 90 días renovables. Tu lab completo de Exchange, Teams, Entra.'},
+  {cat:'sql',catL:'🗄️ SQL / SAP',name:'SQL Server 2022 Developer',icon:'ti-database',bg:'var(--teal-bg)',fg:'var(--teal)',desc:'Versión Developer gratuita con todas las funciones Enterprise. Solo prohibido en producción.'},
+  {cat:'sql',catL:'🗄️ SQL / SAP',name:'SSMS',icon:'ti-table',bg:'var(--teal-bg)',fg:'var(--teal)',desc:'SQL Server Management Studio. IDE oficial gratuito para administrar SQL: BDs, usuarios, backups, jobs.'},
+  {cat:'sql',catL:'🗄️ SQL / SAP',name:'DBeaver Community',icon:'ti-database-cog',bg:'var(--teal-bg)',fg:'var(--teal)',desc:'Cliente universal de bases de datos. Conecta a SQL Server, MySQL, PostgreSQL y más. Mejor UX que SSMS.'},
+  {cat:'sql',catL:'🗄️ SQL / SAP',name:'SAP Learning Hub',icon:'ti-brand-samsungpass',bg:'var(--teal-bg)',fg:'var(--teal)',desc:'Recursos oficiales gratuitos de SAP para admin IT de SAP B1. Arquitectura, usuarios, troubleshooting.'},
+  {cat:'sec',catL:'🛡️ Seguridad',name:'ESET PROTECT (trial)',icon:'ti-shield-check',bg:'var(--rose-bg)',fg:'var(--rose)',desc:'Consola de seguridad endpoint. Trial completo. Gestión centralizada de políticas, alertas y cuarentena.'},
+  {cat:'sec',catL:'🛡️ Seguridad',name:'Kali Linux',icon:'ti-bug',bg:'var(--rose-bg)',fg:'var(--rose)',desc:'Distro Linux para ethical hacking. 600+ herramientas de pentesting. Lab de ciberseguridad defensiva.'},
+  {cat:'sec',catL:'🛡️ Seguridad',name:'Bitwarden',icon:'ti-lock-password',bg:'var(--rose-bg)',fg:'var(--rose)',desc:'Gestor de contraseñas open source. Almacena credenciales de equipos y sistemas de forma segura.'},
+  {cat:'sec',catL:'🛡️ Seguridad',name:'OpenVPN Community',icon:'ti-vpn',bg:'var(--rose-bg)',fg:'var(--rose)',desc:'Servidor VPN open source. Crea túneles VPN seguros para acceso remoto. Alternativa gratuita.'},
+  {cat:'mon',catL:'📊 Monitoreo',name:'Zabbix',icon:'ti-activity',bg:'var(--green-bg)',fg:'var(--green-d)',desc:'Plataforma de monitoreo empresarial open source. Monitorea servidores, red, UPS, cámaras con alertas.'},
+  {cat:'mon',catL:'📊 Monitoreo',name:'PRTG (100 sensores gratis)',icon:'ti-chart-bar',bg:'var(--green-bg)',fg:'var(--green-d)',desc:'Monitor de red y servidores completo. 100 sensores gratuitos — suficiente para empresas medianas.'},
+  {cat:'mon',catL:'📊 Monitoreo',name:'Grafana + Prometheus',icon:'ti-chart-area',bg:'var(--green-bg)',fg:'var(--green-d)',desc:'Stack de monitoreo y dashboards en tiempo real. Visualiza métricas de servidores y red. 100% gratuito.'},
+  {cat:'mon',catL:'📊 Monitoreo',name:'LibreNMS',icon:'ti-timeline',bg:'var(--green-bg)',fg:'var(--green-d)',desc:'Monitoreo de red SNMP. Descubre switches y routers automáticamente. Gráficas de tráfico. Open source.'},
+  {cat:'cctv',catL:'📷 CCTV / IP',name:'iSpy / Agent DVR',icon:'ti-camera',bg:'rgba(244,63,94,.08)',fg:'var(--rose)',desc:'Software NVR gratuito. Conecta cámaras IP via RTSP/ONVIF, graba, detecta movimiento y envía alertas.'},
+  {cat:'cctv',catL:'📷 CCTV / IP',name:'Shinobi NVR',icon:'ti-video',bg:'rgba(244,63,94,.08)',fg:'var(--rose)',desc:'NVR moderno open source. Interfaz web, ONVIF, grabación continua y por movimiento. Multi-usuario.'},
+  {cat:'cctv',catL:'📷 CCTV / IP',name:'ONVIF Device Manager',icon:'ti-camera-cog',bg:'rgba(244,63,94,.08)',fg:'var(--rose)',desc:'Descubre y configura cámaras IP ONVIF en la red. Diagnóstico y configuración inicial gratuito.'},
+  {cat:'cctv',catL:'📷 CCTV / IP',name:'VLC Media Player',icon:'ti-player-play',bg:'rgba(244,63,94,.08)',fg:'var(--rose)',desc:'Reproduce streams RTSP de cámaras IP directamente. Verifica que una cámara transmite correctamente.'},
+  {cat:'cctv',catL:'📷 CCTV / IP',name:'Frigate NVR (Docker)',icon:'ti-brain',bg:'rgba(244,63,94,.08)',fg:'var(--rose)',desc:'NVR con detección de objetos por IA (TensorFlow). Identifica personas, vehículos en tiempo real.'},
+  {cat:'cld',catL:'☁️ Nube',name:'Huawei Cloud Free Tier',icon:'ti-cloud',bg:'var(--violet-bg)',fg:'var(--violet)',desc:'1 año de recursos gratuitos: ECS (VM), OBS (storage), RDS. Perfecto para labs de migración cloud.'},
+  {cat:'cld',catL:'☁️ Nube',name:'eNSP (Huawei)',icon:'ti-topology-ring',bg:'var(--violet-bg)',fg:'var(--violet)',desc:'Simulador oficial Huawei para routers y switches AR/S-series. Laboratorios HCIA sin hardware físico.'},
+  {cat:'cld',catL:'☁️ Nube',name:'Huawei Learning Academy',icon:'ti-school',bg:'var(--violet-bg)',fg:'var(--violet)',desc:'Cursos HCIA Cloud, Datacom y Storage gratuitos en español con labs virtuales en Huawei Cloud real.'},
+  {cat:'cld',catL:'☁️ Nube',name:'Terraform (open source)',icon:'ti-cube-3d-sphere',bg:'var(--violet-bg)',fg:'var(--violet)',desc:'Infraestructura como código. Aprovisiona recursos en Huawei Cloud, AWS, Azure automáticamente.'},
+  {cat:'gen',catL:'🔧 General IT',name:'Draw.io / diagrams.net',icon:'ti-topology-bus',bg:'var(--orange-bg)',fg:'var(--orange)',desc:'Diseña diagramas de red, arquitecturas cloud y topologías. Íconos de Fortinet, Cisco, VMware y más.'},
+  {cat:'gen',catL:'🔧 General IT',name:'Notion (free)',icon:'ti-notes',bg:'var(--orange-bg)',fg:'var(--orange)',desc:'Wiki y base de conocimiento IT. Documenta configuraciones, procedimientos, inventario y SLAs.'},
+  {cat:'gen',catL:'🔧 General IT',name:'WinSCP',icon:'ti-file-upload',bg:'var(--orange-bg)',fg:'var(--orange)',desc:'Cliente SFTP/SCP gratuito. Transfiere archivos de forma segura entre tu PC y servidores Linux.'},
+  {cat:'gen',catL:'🔧 General IT',name:'VS Code',icon:'ti-brand-vscode',bg:'var(--orange-bg)',fg:'var(--orange)',desc:'Editor avanzado gratuito. Scripts PowerShell, YAML de infraestructura, JSON de configuraciones.'},
+];
 
-let state = {};
+// ── STATE ───────────────────────────────────────────────────
+let state = {courses:{}, files:{}};
 let filter = 'all';
+let toolFilter = 'all';
 
 function load(){
-  try{ state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
-  catch(e){ state = {}; }
+  try{ const s=localStorage.getItem(SK); if(s) state=JSON.parse(s); }catch(e){ state={courses:{},files:{}}; }
+  if(!state.courses) state.courses={};
+  if(!state.files) state.files={};
 }
-function save(){
-  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
-}
+function save(){ try{ localStorage.setItem(SK, JSON.stringify(state)); }catch(e){} }
+
 function resetAll(){
-  if(!confirm('¿Reiniciar todo el progreso del checklist?')) return;
-  state = {}; save(); render();
+  if(!confirm('¿Reiniciar todo el progreso? Los archivos adjuntos también se eliminarán.')) return;
+  state={courses:{},files:{}}; save(); render(); toast('Progreso reiniciado');
 }
-function toggle(id){
-  state[id] = !state[id];
+
+function setStatus(id, s){
+  state.courses[id] = state.courses[id]===s ? 'pending' : s;
   save(); render();
+  const labels={pending:'Marcado como pendiente',progress:'¡Curso en proceso! 🔄',done:'¡Curso completado! ✅'};
+  toast(labels[state.courses[id]]||'');
 }
-function setFilter(f, btn){
-  filter = f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  render();
+
+function getStatus(id){ return state.courses[id]||'pending'; }
+
+function setFilter(f,btn){
+  filter=f;
+  document.querySelectorAll('.filters .fbtn[data-f]').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); render();
 }
+
+function setToolFilter(f,btn){
+  toolFilter=f;
+  document.querySelectorAll('#tool-filters .fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); renderTools();
+}
+
 function allCourses(){ return DATA.flatMap(b=>b.courses); }
 
-function updateStats(){
-  const all = allCourses();
-  const total = all.length;
-  const done = all.filter(c=>state[c.id]).length;
-  const freeDone = all.filter(c=>c.free && state[c.id]).length;
-  const paidDone = all.filter(c=>!c.free && state[c.id]).length;
-  const pct = total ? Math.round(done/total*100) : 0;
-  document.getElementById('prog-fill').style.width = pct + '%';
-  document.getElementById('prog-pct').textContent = pct + '%';
-  document.getElementById('done-label').textContent = done + ' de ' + total + ' completados';
-  document.getElementById('s-done').textContent = done;
-  document.getElementById('s-pend').textContent = total - done;
-  document.getElementById('s-free').textContent = freeDone;
-  document.getElementById('s-paid').textContent = paidDone;
-}
-
 function matchFilter(c){
+  const s=getStatus(c.id);
   if(filter==='all') return true;
-  if(filter==='done') return !!state[c.id];
-  if(filter==='pending') return !state[c.id];
+  if(filter==='pending') return s==='pending';
+  if(filter==='progress') return s==='progress';
+  if(filter==='done') return s==='done';
   if(filter==='free') return c.free;
   if(filter==='paid') return !c.free;
   return true;
 }
 
+// ── FILE HANDLING (localStorage base64) ─────────────────────
+function addFile(cid, file){
+  const reader=new FileReader();
+  reader.onload=e=>{
+    if(!state.files[cid]) state.files[cid]=[];
+    state.files[cid].push({name:file.name,type:file.type,data:e.target.result,date:new Date().toLocaleDateString('es')});
+    save(); render();
+    toast('📎 '+file.name+' adjuntado');
+  };
+  reader.readAsDataURL(file);
+}
+function removeFile(cid,idx){
+  if(!state.files[cid]) return;
+  state.files[cid].splice(idx,1);
+  if(!state.files[cid].length) delete state.files[cid];
+  save(); render();
+}
+function downloadFile(cid,idx){
+  const f=state.files[cid][idx];
+  const a=document.createElement('a'); a.href=f.data; a.download=f.name; a.click();
+}
+
+function fileIcon(type){
+  if(type.includes('pdf')) return 'ti-file-type-pdf';
+  if(type.includes('image')) return 'ti-photo';
+  if(type.includes('word')||type.includes('document')) return 'ti-file-type-doc';
+  if(type.includes('sheet')||type.includes('excel')) return 'ti-file-type-xls';
+  return 'ti-file';
+}
+
+// ── STATS ───────────────────────────────────────────────────
+function updateStats(){
+  const all=allCourses(), total=all.length;
+  const done=all.filter(c=>getStatus(c.id)==='done').length;
+  const prog=all.filter(c=>getStatus(c.id)==='progress').length;
+  const pend=all.filter(c=>getStatus(c.id)==='pending').length;
+  const freeDone=all.filter(c=>c.free&&getStatus(c.id)==='done').length;
+  const pct=Math.round(done/total*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('prog-label').textContent=done+' de '+total+' completados';
+  document.getElementById('s-done').textContent=done;
+  document.getElementById('s-prog').textContent=prog;
+  document.getElementById('s-pend').textContent=pend;
+  document.getElementById('s-free').textContent=freeDone;
+  document.getElementById('h-done').textContent=done;
+}
+
+// ── RENDER COURSES ──────────────────────────────────────────
 function render(){
   updateStats();
-  const list = document.getElementById('list');
-  let html = '';
-  DATA.forEach((b, bi) => {
-    const visible = b.courses.filter(matchFilter);
+  const list=document.getElementById('list');
+  let html='';
+  DATA.forEach((b,bi)=>{
+    const visible=b.courses.filter(matchFilter);
     if(!visible.length) return;
-    const total = b.courses.length;
-    const done = b.courses.filter(c=>state[c.id]).length;
-    const col = COLOR_MAP[b.color] || COLOR_MAP.blue;
-    html += `<div class="bloque" id="bloque-${bi}">
-      <div class="bloque-hdr" onclick="toggleBloque(${bi})">
-        <div class="bloque-icon-wrap" style="background:${col.bg};color:${col.fg}">
-          <i class="ti ${b.icon}" aria-hidden="true"></i>
-        </div>
-        <div style="flex:1">
+    const total=b.courses.length;
+    const done=b.courses.filter(c=>getStatus(c.id)==='done').length;
+    const pct=Math.round(done/total*100);
+    html+=`<div class="bloque">
+      <div class="bloque-hdr" onclick="toggleBloque('bd${bi}','bch${bi}')">
+        <div class="icon-wrap" style="background:${b.bg};color:${b.fg}"><i class="ti ${b.icon}"></i></div>
+        <div class="bloque-text">
           <div class="bloque-title">${b.bloque}</div>
+          <div class="bloque-meta">${b.sub}</div>
         </div>
-        <span class="bloque-badge" style="background:${col.bg};color:${col.fg}">${done}/${total}</span>
-        <i class="ti ti-chevron-down bloque-toggle open" id="tog-${bi}" aria-hidden="true"></i>
+        <div class="bloque-prog">
+          <div class="mini-track"><div class="mini-fill" style="width:${pct}%"></div></div>
+          <span class="bloque-count">${done}/${total}</span>
+        </div>
+        <i class="ti ti-chevron-down chevron open" id="bch${bi}"></i>
       </div>
-      <div class="bloque-body open" id="body-${bi}">
+      <div class="bloque-body open" id="bd${bi}">
         <div class="bloque-body-inner">`;
-    visible.forEach(c => {
-      const done = !!state[c.id];
-      html += `<div class="course-row${done?' done':''}" onclick="toggle('${c.id}')">
-        <div class="check-box${done?' checked':''}"><i class="ti ti-check"></i></div>
+    visible.forEach(c=>{
+      const st=getStatus(c.id);
+      const files=state.files[c.id]||[];
+      const fileRows=files.map((f,fi)=>`<div class="file-item">
+        <i class="ti ${fileIcon(f.type)}"></i>
+        <span class="file-name" title="${f.name}" onclick="downloadFile('${c.id}',${fi})" style="cursor:pointer">${f.name}</span>
+        <span style="font-size:10px;color:var(--text-4);flex-shrink:0">${f.date}</span>
+        <button class="file-del" onclick="removeFile('${c.id}',${fi})" title="Eliminar"><i class="ti ti-x"></i></button>
+      </div>`).join('');
+      html+=`<div class="course-row status-${st}">
         <div class="course-info">
-          <div class="course-name">${c.name}</div>
-          <div class="course-meta">
+          <div class="course-name">${c.n}</div>
+          <div class="course-meta-row">
             <span class="tag tag-month">${c.mes}</span>
-            <span class="tag ${c.free?'tag-free':'tag-paid'}">${c.free?'Gratis':'Udemy · '+c.price}</span>
+            <span class="tag ${c.free?'tag-free':'tag-paid'}">${c.free?'Gratis':'Udemy · '+c.p}</span>
             <span class="tag tag-cert">${c.cert}</span>
           </div>
-          <a class="course-url" href="https://${c.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
-            <i class="ti ti-external-link" aria-hidden="true"></i>${c.url}
+          <a class="course-url" href="https://${c.url}" target="_blank" rel="noopener">
+            <i class="ti ti-external-link" style="font-size:11px"></i>${c.url}
           </a>
+          <div class="files-section" style="margin-top:.6rem">
+            <div class="files-label"><i class="ti ti-paperclip"></i> Certificados y documentos</div>
+            ${files.length?`<div class="files-list">${fileRows}</div>`:''}
+            <label class="upload-btn">
+              <i class="ti ti-upload"></i> Subir certificado / documento
+              <input type="file" class="upload-input" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+                onchange="Array.from(this.files).forEach(f=>addFile('${c.id}',f));this.value=''">
+            </label>
+          </div>
+        </div>
+        <div class="status-btns">
+          <button class="sbtn s-pending${st==='pending'?' active':''}" onclick="setStatus('${c.id}','pending')">
+            <i class="ti ti-clock"></i><span>Pendiente</span>
+          </button>
+          <button class="sbtn s-progress${st==='progress'?' active':''}" onclick="setStatus('${c.id}','progress')">
+            <i class="ti ti-loader"></i><span>En proceso</span>
+          </button>
+          <button class="sbtn s-done${st==='done'?' active':''}" onclick="setStatus('${c.id}','done')">
+            <i class="ti ti-circle-check"></i><span>Completado</span>
+          </button>
         </div>
       </div>`;
     });
-    html += `</div></div></div>`;
+    html+=`</div></div></div>`;
   });
-  if(!html) html = `<div class="no-results">No hay cursos en este filtro.</div>`;
-  list.innerHTML = html;
+  if(!html) html=`<div class="no-res"><i class="ti ti-mood-search"></i>No hay cursos en este filtro.</div>`;
+  list.innerHTML=html;
 }
 
-function toggleBloque(bi){
-  const body = document.getElementById('body-'+bi);
-  const tog = document.getElementById('tog-'+bi);
-  const open = body.classList.toggle('open');
-  tog.classList.toggle('open', open);
+function toggleBloque(bodyId,chevId){
+  const body=document.getElementById(bodyId), chev=document.getElementById(chevId);
+  const open=body.classList.toggle('open');
+  chev.classList.toggle('open',open);
 }
 
-load();
-render();
+// ── RENDER TOOLS ────────────────────────────────────────────
+function renderTools(){
+  const grid=document.getElementById('tools-grid');
+  const filtered=toolFilter==='all' ? TOOLS : TOOLS.filter(t=>t.cat===toolFilter);
+  grid.innerHTML=filtered.map(t=>`
+    <div class="tool-card">
+      <div class="tool-hdr">
+        <div class="tool-icon" style="background:${t.bg};color:${t.fg}"><i class="ti ${t.icon}"></i></div>
+        <div>
+          <div class="tool-cat">${t.catL}</div>
+          <div class="tool-name">${t.name}</div>
+        </div>
+      </div>
+      <div class="tool-desc">${t.desc}</div>
+      <div class="tool-free"><i class="ti ti-check"></i> Gratuita</div>
+    </div>
+  `).join('');
+}
+
+// ── TOAST ───────────────────────────────────────────────────
+let toastT;
+function toast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(toastT);
+  toastT=setTimeout(()=>el.classList.remove('show'),2800);
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+load(); render(); renderTools();
 </script>
-
 </body>
 </html>
